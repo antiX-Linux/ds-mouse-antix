@@ -1,0 +1,4 @@
+mouse.desktop   usr/share/applications/antix
+mouse.conf 	etc/skel/.desktop-session
+bin/*           usr/local/bin
+locale/* 	usr/share/locale

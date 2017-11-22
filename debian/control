@@ -1,0 +1,14 @@
+Source: ds-mouse-antix
+Section: system
+Priority: optional
+Maintainer: anticapitalista <antix@operamail.com>
+Build-Depends: debhelper (>= 9.20120115)
+Standards-Version: 3.9.8
+Homepage: http://antix.mepis.org
+
+Package: ds-mouse-antix
+Depends: yad, x11-xserver-utils, desktop-session-antix
+Conflicts: mouse-cc-antix 
+Replaces: mouse-cc-antix 
+Architecture: all
+Description: Set mouse options for antiX.        

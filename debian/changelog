@@ -1,0 +1,37 @@
+ds-mouse-antix (0.1.5) unstable; urgency=medium
+
+  * Include in Applications menu
+
+ -- anticapitalista <antix@operamail.com>  Sat, 07 Oct 2017 18:06:47 +0300
+
+ds-mouse-antix (0.1.4) unstable; urgency=low
+
+  * Czech translation added
+
+ -- anticapitalista <antix@operamail.com>  Sun, 02 Apr 2017 19:40:13 +0300
+
+ds-mouse-antix (0.1.3) unstable; urgency=medium
+
+  * Update Spanish 
+
+ -- anticapitalista <antix@operamail.com>  Wed, 01 Jun 2016 23:33:00 +0300
+
+ds-mouse-antix (0.1.2) unstable; urgency=medium
+
+  * Updated translations
+
+ -- anticapitalista <antix@operamail.com>  Mon, 30 May 2016 16:33:14 +0300
+
+ds-mouse-antix (0.1.1) unstable; urgency=low 
+ 
+  * Added conflicts and replaces to control file.
+
+ -- anticapitalista <antiX@operamail.com>  Fri, 29 Jan 2016 20:09:00 +0200
+
+
+ds-mouse-antix (0.1.0) unstable; urgency=low 
+ 
+  * Initial Release.
+
+ -- anticapitalista <antiX@operamail.com>  Wed, 27 Jan 2016 15:32:00 +0200
+
