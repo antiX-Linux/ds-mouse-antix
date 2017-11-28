@@ -168,8 +168,8 @@ class mainWindow():
         self.make_frame(_("Button Order"))
        
         self.order = gtk.combo_box_new_text()
-        self.order.append_text(_("Left hand layout"))
         self.order.append_text(_("Right hand layout"))
+        self.order.append_text(_("Left hand layout"))
         self.order.set_active(int(Var.BUTTONORDER))
         self.framebox.pack_start(self.order)
         self.order.show()
