@@ -1,3 +1,17 @@
+ds-mouse-antix (0.1.7) unstable; urgency=medium
+
+  * Fixed wrong LHS and RHS switch
+  * added lh-mouse and rh-mouse scripts
+
+ -- anticapitalista <antix@operamail.com>  Tue, 13 Mar 2018 16:28:29 +0200
+
+ds-mouse-antix (0.1.6) unstable; urgency=medium
+
+  * Added Amharic, Lithuanian, Slovak
+  * Improved French, Italian, Russian 
+
+ -- anticapitalista <antix@operamail.com>  Sun, 04 Mar 2018 22:35:22 +0200
+
 ds-mouse-antix (0.1.5) unstable; urgency=medium
 
   * Include in Applications menu

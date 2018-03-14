@@ -1,6 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Mouse Configuration
+Name[am]=አይጥ ማሰናጃ
 Name[ca]=Configuració del ratolí
 Name[de]=Maus-Konfiguration
 Name[el]=Mouse Configuration
@@ -11,6 +12,7 @@ Name[nl]=Muis Configuratie
 Name[pt]=Configurar Rato
 Name[sv]=Muskonfiguration
 Comment=Configure mouse for session
+Comment[am]=አይጥ ለ ክፍለ ጊዜ ማሰናጃ
 Comment[ca]=Configura el ratolí per aquesta sessió
 Comment[de]=Konfiguriere die Maus für diese Session
 Comment[el]=Διαμορφώστε το ποντίκι για την περίοδο λειτουργίας
