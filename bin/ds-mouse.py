@@ -52,12 +52,14 @@ class Var:
                     OBJECT = re.sub(r'\n', '', OBJECT)
                     setattr(var, var.VARIABLE, OBJECT)
         for line in open(var.CONF_USER_STARTUP):
-            li=line.strip()
             if re.search(r'ds-mouse' , line):
+                li=line.strip()
                 if li.startswith("#"):
                     var.startstatus = False
                 else:
                     var.startstatus = True
+            else:
+                var.startstatus = False
         
     def write(self, variable, item):
         WRITE_FILE = Var.CONF_USER_FILE+".tmp"
