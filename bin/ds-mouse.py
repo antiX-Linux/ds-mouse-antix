@@ -151,12 +151,11 @@ class mainWindow(Gtk.Window):
                loop=1 
             else:
                text.write (line) 
-        text.close()
+        
         if loop == 0 :
-            text = file((TEMP_FILE), "a")
             text.write ("\n#Enable Mouse Configuration at Startup\nds-mouse --all\n")
-            text.close()
-            
+        
+        text.close()    
         os.system("mv %s %s" % ((TEMP_FILE), (Var.CONF_USER_STARTUP)))
     
     def toggle_startup(self, widget, object):
