@@ -12,15 +12,15 @@ import re
 import gettext
 gettext.install("ds-mouse.py", "/usr/share/locale")
 class Error:
-    def __init__(self, error):
-        dlg = Gtk.MessageDialog(None, 0, Gtk.MessageType.ERROR, Gtk.ButtonsType.OK, "Error")
+    def __init__(self, parent, error):
+        dlg = Gtk.MessageDialog(parent, 0, Gtk.MessageType.ERROR, Gtk.ButtonsType.OK, "Error")
         dlg.format_secondary_text(error)
         dlg.run()
         dlg.destroy()
        
 class Success:
-    def __init__(self, success):
-         dlg = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, "Success")
+    def __init__(self, parent, success):
+         dlg = Gtk.MessageDialog(parent, 0, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, "Success")
          dlg.format_secondary_text(success)
          dlg.run()
          dlg.destroy()
@@ -92,9 +92,9 @@ class mainWindow(Gtk.Window):
             try:
                 os.system("ds-mouse -all")
             except:
-                Error(_("Could not run ds-mouse -all"))
+                Error(self, _("Could not run ds-mouse -all"))
             else:
-				Success(_("All Options Set"))
+				Success(self, _("All Options Set"))
         elif option == 1: #reset motion button
             acceleration_value = '-1'
             threshold_value = '-1'
@@ -103,18 +103,18 @@ class mainWindow(Gtk.Window):
             try:
                 os.system("ds-mouse -a")
             except:
-                Error(_("Could not run ds-mouse -a"))
+                Error(self, _("Could not run ds-mouse -a"))
             else:
-				Success(_("Mouse Acceleration Reset"))
+				Success(self, _("Mouse Acceleration Reset"))
         elif option == 2: #reset size button
             size_value = '-1'
             Var().write('SIZE', size_value)
             try:
                 os.system("ds-mouse -s")
             except:
-                Error(_("Could not run ds-mouse -s"))
+                Error(self, _("Could not run ds-mouse -s"))
             else:
-				Success(_("Cursor Size Reset"))
+				Success(self, _("Cursor Size Reset"))
         elif option == 3: #change cursor theme button
             try:
                 os.system("lxappearance")
@@ -156,25 +156,25 @@ class mainWindow(Gtk.Window):
             text.write ("\n#Enable Mouse Configuration at Startup\nds-mouse --all &\n")
         
         text.close()    
-        os.system("mv %s %s" % ((TEMP_FILE), (Var.CONF_USER_STARTUP)))
+        os.system("mv %s %s && chmod 755 %s" % ((TEMP_FILE), (Var.CONF_USER_STARTUP), (Var.CONF_USER_STARTUP)))
     
     def toggle_startup(self, widget, object):
         if self.startup.get_active() == True:
             try:
                 self.startup_write("ds-mouse", "ds-mouse --all &")
             except:
-                Error(_("Could not turn on startup \n Please edit ~/.desktop-session/startup manually"))
+                Error(self, _("Could not turn on startup \n Please edit ~/.desktop-session/startup manually"))
                 self.startup.set_active(False)
             else:
-                Success(_("Mouse configuration will load on startup"))
+                Success(self, _("Mouse configuration will load on startup"))
         else:
             try:
                 self.startup_write("ds-mouse", "#ds-mouse --all &")
             except:
-                Error(_("Could not turn off startup \n Please edit ~/.desktop-session/startup manually"))
+                Error(self, _("Could not turn off startup \n Please edit ~/.desktop-session/startup manually"))
                 self.startup.set_active(True)
             else:
-                Success(_("Mouse configuration will not load on startup"))
+                Success(self, _("Mouse configuration will not load on startup"))
 
     def __init__(self):
         Gtk.Window.__init__(self)
