@@ -153,7 +153,7 @@ class mainWindow(Gtk.Window):
                text.write (line) 
         
         if loop == 0 :
-            text.write ("\n#Enable Mouse Configuration at Startup\nds-mouse --all &\n")
+            text.write ("\n#Enable Mouse Configuration at Startup\nds-mouse -all &\n")
         
         text.close()    
         os.system("mv %s %s && chmod 755 %s" % ((TEMP_FILE), (Var.CONF_USER_STARTUP), (Var.CONF_USER_STARTUP)))
@@ -161,7 +161,7 @@ class mainWindow(Gtk.Window):
     def toggle_startup(self, widget, object):
         if self.startup.get_active() == True:
             try:
-                self.startup_write("ds-mouse", "ds-mouse --all &")
+                self.startup_write("ds-mouse", "ds-mouse -all &")
             except:
                 Error(self, _("Could not turn on startup \n Please edit ~/.desktop-session/startup manually"))
                 self.startup.set_active(False)
@@ -169,7 +169,7 @@ class mainWindow(Gtk.Window):
                 Success(self, _("Mouse configuration will load on startup"))
         else:
             try:
-                self.startup_write("ds-mouse", "#ds-mouse --all &")
+                self.startup_write("ds-mouse", "#ds-mouse -all &")
             except:
                 Error(self, _("Could not turn off startup \n Please edit ~/.desktop-session/startup manually"))
                 self.startup.set_active(True)
